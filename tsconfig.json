@@ -1,0 +1,21 @@
+{
+  "typeRoots": [
+    "node_modules/@types",
+    "src/types" // определить расположение типов
+  ],
+  "compilerOptions": {
+    "outDir": "dist",
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "ESNext", // esnext
+    "target": "es5",
+    "jsx": "react-jsx",
+    "allowJs": true,
+    "moduleResolution": "Bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true
+  }
+}

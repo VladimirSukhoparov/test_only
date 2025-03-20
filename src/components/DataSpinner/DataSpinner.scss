@@ -1,0 +1,72 @@
+.spinner {
+  &__circle-area {
+    z-index: 22;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    cursor: pointer;
+    visibility: visible;
+
+    &:hover .spinner__circle {
+      background-color: var(--bg-color);
+      scale: 1;
+    }
+  }
+
+  &__circle {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--font-main-color);
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    transform: rotate(calc(-360deg / var(--count) * var(--i) - var(--angle)));
+    border: 1px solid var(--circle-color);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 150%;
+    color: var(--font-main-color);
+    visibility: visible;
+    scale: 0.105;
+    transition: all 300ms ease-in-out;
+  }
+
+  &__title {
+    position: absolute;
+    left: 76px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 300ms linear var(--delay);
+  }
+
+  &__shoulder {
+    width: calc(100% + 56px);
+    transform-origin: center;
+    position: absolute;
+    transform: rotate(calc(360deg / var(--count) * var(--i)));
+    visibility: hidden;
+
+    &_active {
+      & .spinner__title {
+        opacity: 1;
+        visibility: visible;
+        cursor: default;
+      }
+
+      & .spinner__circle {
+        width: 56px;
+        height: 56px;
+        background-color: var(--bg-color);
+        scale: 1;
+        cursor: default;
+      }
+    }
+  }
+}
